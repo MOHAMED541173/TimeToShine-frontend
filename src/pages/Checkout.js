@@ -24,7 +24,7 @@ function Checkout() {
   }, []);
 
   const fetchProducts = async () => {
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/products`);
+    const response = await fetch(`${process.env.REACT_APP_HOST}api/products`);
     const data = await response.json();
     setProducts(data);
   };
@@ -50,7 +50,7 @@ function Checkout() {
 
     for (const [productId, quantity] of Object.entries(cart)) {
       try {
-        await fetch(`${process.env.REACT_APP_HOST}/api/purchase`, {
+        await fetch(`${process.env.REACT_APP_HOST}api/purchase`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ productId, quantity }),
