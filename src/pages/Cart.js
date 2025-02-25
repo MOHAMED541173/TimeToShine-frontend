@@ -13,7 +13,7 @@ function Cart() {
   }, []);
 
   const fetchProducts = async () => {
-    const response = await fetch(`${REACT_APP_HOST}/api/products`);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/products`);
     const data = await response.json();
     setProducts(data);
   };
